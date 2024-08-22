@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+        color: royalblue;
+        font-family: Verdana, sans-serif;
+      }
+
+      form {
+        margin: auto;
+        width: 55%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      #error {
+        color: red;
+      }
+      button {
+        font-size: medium;
+        font-weight: 600;
+        color: royalblue;
+        background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+        border: 1.5px solid black;
+        box-shadow: 0 1.75px black;
+        border-radius: 4%;
+      }
+      button:active {
+        box-shadow: 0 1px black;
+        transform: translateY(1px);
+      }
+      input {
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <h2 style="text-align: center; color: royalblue">
+        Get G-Drive Linked Image URL
+      </h2>
+      <form>
+        <span style="display: flex; justify-content: space-between">
+          <input
+            type="text"
+            id="driveURL"
+            style="flex-grow: 1; margin-right: 10px; font-size: medium"
+            placeholder="Enter Google Drive Shareable Image Link"
+          />
+          <button type="button" onclick="getImageURL(event)">Submit</button>
+        </span>
+        <div id="error" style="display: none; text-align: center">
+          Enter Valid Google Drive Image Link
+        </div>
+        <div style="display: flex; margin: 20px 0px 10px 0">
+          <input
+            id="success"
+            type="text"
+            disabled
+            style="
+              flex-grow: 1;
+              font-size: large;
+              display: none;
+              margin-right: 10px;
+            "
+          />
+          <button
+            type="button"
+            id="successBtn"
+            style="display: none"
+            onclick="copyURL(event)"
+          >
+            Copy
+          </button>
+        </div>
+      </form>
+      <div
+        style="
+          position: absolute;
+          bottom: 3%;
+          width: 98%;
+          text-align: center;
+          font-size: 1.5rem;
+        "
+      >
+        Made with <span style="color: red">❤</span> by <b>Rushabh Shah</b> 😃
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
